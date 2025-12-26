@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
     // Désactiver les vérifications TypeScript pendant le build
     ignoreBuildErrors: true
   },
+  images: {
+    // Autoriser les images depuis l'API
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'api.local',
+        pathname: '/**'
+      }
+    ]
+  },
   redirects: async () => {
     return [
       {

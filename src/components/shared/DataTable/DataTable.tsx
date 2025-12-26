@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 import {
   useReactTable,
   getCoreRowModel,
@@ -138,8 +138,8 @@ export function DataTable<TData extends Record<string, any>>(props: DataTableCon
           <table className={tableStyles.table}>
             <thead>
               {table.getHeaderGroups().map(headerGroup => (
-                <>
-                  <tr key={headerGroup.id}>
+                <React.Fragment key={headerGroup.id}>
+                  <tr>
                     {headerGroup.headers.map(header => (
                       <th key={header.id}>
                         {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
@@ -157,7 +157,7 @@ export function DataTable<TData extends Record<string, any>>(props: DataTableCon
                       ))}
                     </tr>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </thead>
             {loading ? (

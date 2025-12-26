@@ -11,6 +11,7 @@ import { MenuConfig, ModuleMenuConfig, UserRole } from '@/shared/types/menu-conf
 import { dashboardMenuConfig } from '@/modules/Dashboard/menu.config';
 import { usersGuardMenuConfig } from '@/modules/UsersGuard/menu.config';
 import { superAdminMenuConfig } from '@/modules/SuperAdmin/menu.config';
+import { cmsMenuConfig } from '@/modules/Cms/menu.config';
 
 /**
  * Registry of all module menu configurations
@@ -24,6 +25,7 @@ const moduleMenuConfigs: ModuleMenuConfig[] = [
   dashboardMenuConfig,
   usersGuardMenuConfig,
   superAdminMenuConfig,
+  cmsMenuConfig,
   // Add more module menu configs here
 ];
 
